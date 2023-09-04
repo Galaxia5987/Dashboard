@@ -67,11 +67,11 @@ def update_output(n11, n12, n13, n14, n15, n16, n17, n18, n19,
 
 app.layout = html.Div([
     *(html.Button('', id='b' + str(i), className=column_index_to_class_name(i, False), n_clicks=0,
-                  style={'position': "absolute", 'left': 142 * (i-1), 'bottom': 0}) for i in range(10)),
+                  style={'position': "absolute", 'left': 143 * (i-1), 'bottom': 0}) for i in range(10)),
     *(html.Button('', id='m' + str(i), className=column_index_to_class_name(i, False), n_clicks=0,
-                  style={'position': "absolute", 'left': 142 * (i-1), 'bottom': 200}) for i in range(10)),
+                  style={'position': "absolute", 'left': 143 * (i-1), 'bottom': 200}) for i in range(10)),
     *(html.Button('', id='t' + str(i), className='unclicked-hybrid-button', n_clicks=0,
-                  style={'position': "absolute", 'left': 142 * (i - 1), 'bottom': 400}) for i in range(10)),
+                  style={'position': "absolute", 'left': 143 * (i - 1), 'bottom': 400}) for i in range(10)),
 ])
 
 
