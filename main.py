@@ -84,6 +84,5 @@ def switch_class_name(class_name, game_piece):
 
 
 if __name__ == '__main__':
-    app.run(debug=True
-            )
+    app.run(debug=True)
 
