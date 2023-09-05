@@ -1,4 +1,7 @@
+import threading
+
 from dash import Dash, dcc, ctx, html, Input, Output, State, callback
+import ntcore
 
 
 clicked_button_index = [1, 1]
@@ -83,6 +86,22 @@ def switch_class_name(class_name, game_piece):
         return "unclicked-" + game_piece + "-button"
 
 
+inst = ntcore.NetworkTableInstance.getDefault()
+inst.startServer()
+pb_row_index = inst.getIntegerTopic("selected_row_index").publish()
+pb_column_index = inst.getIntegerTopic("selected_column_index").publish()
+pb_row_index.setDefault(0)
+pb_column_index.setDefault(0)
+
+
+def update_nt():
+    while True:
+        pb_row_index.set(clicked_button_index[0])
+        pb_column_index.set(clicked_button_index[1])
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    thread = threading.Thread(target=update_nt)
+    thread.start()
+    app.run(debug=False)
 
