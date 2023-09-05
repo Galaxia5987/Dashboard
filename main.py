@@ -77,13 +77,6 @@ app.layout = html.Div([
 ])
 
 
-def switch_class_name(class_name, game_piece):
-    if class_name == "unclicked-" + game_piece + "-button":
-        return "clicked-" + game_piece + "-button"
-    else:
-        return "unclicked-" + game_piece + "-button"
-
-
 inst = ntcore.NetworkTableInstance.getDefault()
 inst.startServer()
 pb_row_index = inst.getIntegerTopic("selected_row_index").publish()
