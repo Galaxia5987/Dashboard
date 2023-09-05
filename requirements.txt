@@ -1,0 +1,5 @@
+dash==2.13.0
+plotly==5.16.1
+pandas==2.1.0
+pyntcore==2023.4.3.0
+pyinstaller
